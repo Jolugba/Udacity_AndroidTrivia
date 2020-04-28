@@ -80,4 +80,9 @@
         android:id="@+id/aboutFragment"
         android:name="com.tinuade.udacity_androidtrivia.navigation.AboutFragment"
         android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/rulesFragment2"
+        android:name="com.tinuade.udacity_androidtrivia.navigation.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
 </navigation>
