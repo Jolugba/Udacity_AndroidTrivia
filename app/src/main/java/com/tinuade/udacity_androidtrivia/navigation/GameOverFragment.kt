@@ -27,13 +27,17 @@ import com.tinuade.udacity_androidtrivia.R
 import com.tinuade.udacity_androidtrivia.databinding.FragmentGameOverBinding
 
 class GameOverFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
-                inflater, R.layout.fragment_game_over, container, false)
-        binding.tryAgainButton.setOnClickListener{view:View->
-            Navigation.findNavController(view).navigate(GameOverFragmentDirections.actionGameOverFragment2ToGameFragment())
+            inflater, R.layout.fragment_game_over, container, false
+        )
+        binding.tryAgainButton.setOnClickListener { view: View ->
+            Navigation.findNavController(view)
+                .navigate(GameOverFragmentDirections.actionGameOverFragment2ToGameFragment())
         }
         return binding.root
     }

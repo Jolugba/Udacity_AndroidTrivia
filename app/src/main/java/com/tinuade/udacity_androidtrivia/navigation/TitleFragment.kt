@@ -19,17 +19,19 @@ class TitleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding:FragmentTitleBinding=DataBindingUtil.inflate(inflater,R.layout.fragment_title,container,false)
-        binding.playButton.setOnClickListener{ view:View ->
-            Navigation.findNavController(view).navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
+        val binding: FragmentTitleBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false)
+        binding.playButton.setOnClickListener { view: View ->
+            Navigation.findNavController(view)
+                .navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
             setHasOptionsMenu(true)
         }
-    return binding.root
+        return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.overflow_menu,menu)
+        inflater.inflate(R.menu.overflow_menu, menu)
     }
 
 

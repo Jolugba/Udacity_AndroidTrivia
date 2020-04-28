@@ -34,11 +34,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         @Suppress("UNUSED_VARIABLE")
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        drawerLayout= binding.drawerLayout
-        val navController=this.findNavController(R.id.myNavHostGraph)
-        NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout)
-        NavigationUI.setupWithNavController(binding.navView,navController)
+        val binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        drawerLayout = binding.drawerLayout
+        val navController = this.findNavController(R.id.myNavHostGraph)
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        NavigationUI.setupWithNavController(binding.navView, navController)
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
 
         // prevent nav gesture if not on start destination
@@ -53,7 +54,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController=this.findNavController(R.id.myNavHostGraph)
-        return NavigationUI.navigateUp(navController,drawerLayout)
+        val navController = this.findNavController(R.id.myNavHostGraph)
+        return NavigationUI.navigateUp(navController, drawerLayout)
 
-}}
+    }
+}
